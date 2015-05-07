@@ -9,7 +9,7 @@
           <h2>Shorten a URL</h2>
 
           <%= form_for Url.new, :remote => true do |f| -%>
-            <p><%= f.text_field :url, placeholder: "paste in a URL to enshrinkenize it..." %></p>
+            <p><%= f.text_field :url, placeholder: "paste in a URL to enshrinkenize it...", class: "form-control" %></p>
             <p><%= f.submit class: "btn btn-primary btn-lg" %></p>
           <% end -%>
           <!-- <p><a class="btn btn-primary btn-lg">Enshrinken</a></p> -->
@@ -30,7 +30,6 @@
     </div>
   </div>
 
-  
   <div class="row">
     <div class="col-lg-12">
       <div class="page-header">
