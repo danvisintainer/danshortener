@@ -4,7 +4,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.create(url: params["url"]["url"])
+    @url = Url.find_or_create_by(url: sanitize(params["url"]["url"]))
 
     respond_to do |f|
       f.js { }
