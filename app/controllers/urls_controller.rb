@@ -1,6 +1,6 @@
 class UrlsController < ApplicationController
   def index
-
+    @top100 = Url.order(hits: :desc).limit(100)
   end
 
   def create
