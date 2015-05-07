@@ -12,10 +12,21 @@ class UrlsController < ApplicationController
   end
 
   def show
-    binding.pry
     destination = Url.find_by(shorturl: params["shorturl"])
-    destination.add_hit 
-    redirect_to destination.url
+    if destination.nil?
+      redirect_to root_path, :flash => { :error => "oops, that shortcode hasn't been made yet! try another one." }
+    else
+      destination.add_hit 
+      redirect_to destination.url
+    end
+  end
+
+  def sanitize(url)
+    unless url.start_with?("http://") || url.start_with?("https://")
+      url = 'http://' + url
+    end
+
+    url
   end
 
 end
