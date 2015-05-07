@@ -13,5 +13,9 @@ class UrlsController < ApplicationController
 
   def show
     binding.pry
+    destination = Url.find_by(shorturl: params["shorturl"])
+    destination.add_hit 
+    redirect_to destination.url
   end
+
 end
