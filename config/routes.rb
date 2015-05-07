@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'urls#index'
+
+  get '/:shorturl' => 'urls#show'
+
   resources :urls
 
   # The priority is based upon order of creation: first created -> highest priority.
