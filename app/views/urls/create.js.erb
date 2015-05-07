@@ -1,1 +1,4 @@
-alert("Your URL is <%= "#{request.env["HTTP_HOST"]}/#{@url.shorturl}" %>!");
+// alert("Your URL is <%= "#{request.env["HTTP_HOST"]}/#{@url.shorturl}" %>!");
+
+$('#shortened-url').append("<%= "#{request.env["HTTP_HOST"]}/#{@url.shorturl}" %>");
+$('#ajax-success').slideDown();
