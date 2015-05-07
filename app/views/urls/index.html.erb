@@ -1,0 +1,20 @@
+<div class="container">
+<div class="row">
+  <div class="col-lg-12">
+    <div class="page-header">
+      <h1 id="container">danshortener</h1>
+    </div>
+    <div class="bs-component">
+      <div class="jumbotron">
+        <h2>Shorten a URL</h2>
+
+        <%= form_for Url.new do |f| -%>
+          <p><%= f.text_field :url, placeholder: "paste in a URL to enshrinkenize it..." %></p>
+          <p><%= f.submit class: "btn btn-primary btn-lg" %></p>
+        <% end -%>
+        <!-- <p><a class="btn btn-primary btn-lg">Enshrinken</a></p> -->
+      </div>
+    <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+  </div>
+</div>
+</div>
